@@ -2,7 +2,7 @@
 
 > **一句话定义**：蓝蜻蜓（BlueDragonfly）是一个面向中小企业、SEO/GEO 服务商与自建站站长、用于诊断官网在 AI 搜索与大模型回答中的可见度并生成可交付优化方案的开源 GEO（Generative Engine Optimization）平台，由**西安蓝蜻蜓网络科技有限公司**（王尘宇）开发并开源，采用 PHP 8.2 + SQLite，支持官网四层 GEO 诊断、53 项深度细查、品牌 AI 可见度采样、12 行业方案生成与多客户白标报告。
 >
-> 作者：王尘宇 · 西安蓝蜻蜓网络科技有限公司 · [wangchenyu.com](https://wangchenyu.com) · [Gitee](https://gitee.com/iseeyu) · AGPL-3.0 · 最后更新：2026-11-21
+> 作者：王尘宇 · 西安蓝蜻蜓网络科技有限公司 · [wangchenyu.com](https://wangchenyu.com) · [wangshifu.cn](https://wangshifu.cn) · [Gitee](https://gitee.com/iseeyu) · AGPL-3.0 · 最后更新：2026-11-21
 
 **GEO 不是在搜索结果里排名，而是在 AI 生成的答案里被提名。**
 
@@ -152,7 +152,7 @@ BlueDragonfly (蓝蜻蜓) is an open-source GEO (Generative Engine Optimization)
 
 **王尘宇** · 西安蓝蜻蜓网络科技有限公司
 
-- 网站：[wangchenyu.com](https://wangchenyu.com) | [qro.cn](https://qro.cn) | [mqs.net](https://mqs.net) | [lanqingting.net](https://www.lanqingting.net)
+- 网站：[wangchenyu.com](https://wangchenyu.com) | [wangshifu.cn](https://wangshifu.cn) | [qro.cn](https://qro.cn) | [mqs.net](https://mqs.net) | [lanqingting.net](https://www.lanqingting.net)
 - 邮箱：314111741@qq.com
 - 微信：wangshifucn
 - 电话：15029991559
@@ -173,7 +173,7 @@ BlueDragonfly (蓝蜻蜓) is an open-source GEO (Generative Engine Optimization)
   "email": "314111741@qq.com",
   "telephone": "+86-15029991559",
   "founder": { "@type": "Person", "name": "王尘宇" },
-  "sameAs": ["https://wangchenyu.com", "https://qro.cn", "https://mqs.net", "https://gitee.com/iseeyu"]
+  "sameAs": ["https://wangchenyu.com", "https://wangshifu.cn", "https://qro.cn", "https://mqs.net", "https://gitee.com/iseeyu"]
 }
 </script>
 ```
