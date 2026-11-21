@@ -1,4 +1,4 @@
-# 蓝蜻蜓 · GEO 诊断平台 — https://your-domain.example/
+# 蓝蜻蜓 · GEO 诊断平台 — https://geo.lanqingting.net/
 # 说明：本文件由站点自主提供，显式放行主流 AI / 生成式引擎爬虫。
 # 诊断工作台、后台与 API 不供索引。
 # 本文件由后台「站点地址与 SEO/GEO 文件」自动生成，请勿手工编辑。
@@ -55,4 +55,4 @@ Disallow: /build/
 Disallow: /icons/
 Disallow: /manifest.webmanifest
 
-Sitemap: https://your-domain.example/sitemap.xml
+Sitemap: https://geo.lanqingting.net/sitemap.xml

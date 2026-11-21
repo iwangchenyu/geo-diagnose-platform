@@ -10,23 +10,23 @@
 <meta name="theme-color" content="#131410" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#F4F2EC" media="(prefers-color-scheme: light)">
 <meta name="color-scheme" content="light dark">
-<link rel="canonical" href="https://your-domain.example/geo/ai-crawlers/">
+<link rel="canonical" href="https://geo.lanqingting.net/geo/ai-crawlers/">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="蓝蜻蜓">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:url" content="https://your-domain.example/geo/ai-crawlers/">
+<meta property="og:url" content="https://geo.lanqingting.net/geo/ai-crawlers/">
 <meta property="og:title" content="主流 AI 爬虫清单与 robots.txt 配置">
 <meta property="og:description" content="8 类主流 AI 爬虫的用途差异、逐 UA 显式放行的写法与自检方法。">
-<meta property="og:image" content="https://your-domain.example/og-image.png">
+<meta property="og:image" content="https://geo.lanqingting.net/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="主流 AI 爬虫清单与 robots.txt 配置">
 <meta name="twitter:description" content="8 类主流 AI 爬虫的用途差异、逐 UA 显式放行的写法与自检方法。">
-<meta name="twitter:image" content="https://your-domain.example/og-image.png">
+<meta name="twitter:image" content="https://geo.lanqingting.net/og-image.png">
 <meta property="article:published_time" content="2026-11-20T00:00:00+08:00">
 <meta property="article:modified_time" content="2026-11-20T00:00:00+08:00">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://your-domain.example/#organization","name":"蓝蜻蜓","url":"https://your-domain.example/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://your-domain.example/"},{"@type":"ListItem","position":2,"name":"GEO 知识","item":"https://your-domain.example/geo/"},{"@type":"ListItem","position":3,"name":"主流 AI 爬虫清单与 robots.txt 配置"}]},{"@type":"Article","@id":"https://your-domain.example/geo/ai-crawlers/#article","headline":"主流 AI 爬虫清单与 robots.txt 配置","inLanguage":"zh-CN","author":{"@id":"https://your-domain.example/#organization"},"publisher":{"@id":"https://your-domain.example/#organization"},"datePublished":"2026-11-20","dateModified":"2026-11-20","mainEntityOfPage":"https://your-domain.example/geo/ai-crawlers/","description":"8 类主流 AI 爬虫的用途差异、逐 UA 显式放行的写法与自检方法。"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://geo.lanqingting.net/#organization","name":"蓝蜻蜓","url":"https://geo.lanqingting.net/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://geo.lanqingting.net/"},{"@type":"ListItem","position":2,"name":"GEO 知识","item":"https://geo.lanqingting.net/geo/"},{"@type":"ListItem","position":3,"name":"主流 AI 爬虫清单与 robots.txt 配置"}]},{"@type":"Article","@id":"https://geo.lanqingting.net/geo/ai-crawlers/#article","headline":"主流 AI 爬虫清单与 robots.txt 配置","inLanguage":"zh-CN","author":{"@id":"https://geo.lanqingting.net/#organization"},"publisher":{"@id":"https://geo.lanqingting.net/#organization"},"datePublished":"2026-11-20","dateModified":"2026-11-20","mainEntityOfPage":"https://geo.lanqingting.net/geo/ai-crawlers/","description":"8 类主流 AI 爬虫的用途差异、逐 UA 显式放行的写法与自检方法。"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"robots.txt 只写 User-agent: * 允许全部，AI 爬虫就能抓到吗？","acceptedAnswer":{"@type":"Answer","text":"多数情况下能，但不可靠：部分 CDN 安全策略、WAF 规则或站点配置会按 UA 差分拦截，且只写通配符无法表达「明确欢迎 AI 爬虫」的语义。逐 UA 写 Allow 是更稳、更有表达力的做法。"}},{"@type":"Question","name":"放行 AI 爬虫会不会被恶意抓取？","acceptedAnswer":{"@type":"Answer","text":"robots.txt 本身只是声明而非访问控制。对公开内容而言放行的收益（被引用、被推荐）远大于风险；真正需要保护的后台、API 与私有目录，应通过鉴权、频控与 Disallow 双重手段处理，而不是一刀切屏蔽所有 AI 爬虫。"}}]}</script>
 <script>(function(){try{var t=localStorage.getItem('geo-theme');if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
 <link rel="stylesheet" href="/landing/style.css">
@@ -99,7 +99,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 
-Sitemap: https://your-domain.example/sitemap.xml</code></pre>
+Sitemap: https://geo.lanqingting.net/sitemap.xml</code></pre>
 
     <h2>常见坑</h2>
     <ul>

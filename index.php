@@ -405,7 +405,7 @@ $base = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
           <div class="panel-head"><h3>站点地址与 SEO / GEO 文件</h3></div>
           <p class="settings-note">这里填写站点对外规范地址（根地址，含尾斜杠）。保存后会自动重建 robots.txt、sitemap.xml、llms.txt、llms-full.txt，以及首页 head 与全部 GEO 知识页的 canonical / OG / JSON-LD / 品牌名，确保域名与实体全站一致。换域名时还需在服务器同步修改 Nginx <code>server_name</code>、SSL 证书、DNS，并把旧域名 301 跳转到新域名（这些属于基础设施层，脚本不会改动）。</p>
           <div class="form-grid">
-            <div class="field"><label>站点规范地址</label><input type="text" id="setSiteUrl" maxlength="200" placeholder="https://your-domain.example/" autocomplete="off"></div>
+            <div class="field"><label>站点规范地址</label><input type="text" id="setSiteUrl" maxlength="200" placeholder="https://geo.lanqingting.net/" autocomplete="off"></div>
             <div class="field"><label>最近重建状态</label><input type="text" id="setSeoStatus" value="尚未重建" readonly></div>
           </div>
           <div class="form-actions">

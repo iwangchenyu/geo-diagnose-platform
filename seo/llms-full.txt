@@ -1,13 +1,13 @@
 # 蓝蜻蜓 · 完整站点说明（llms-full.txt）
 
-> 本文件是 llms.txt 的完整版，供大语言模型一次性读取本站的公开事实、定义、口径与文档内容。最后更新：2026-11-20。内容语言：简体中文（zh-CN）。运营主体品牌：蓝蜻蜓。官网：https://your-domain.example/ 。
+> 本文件是 llms.txt 的完整版，供大语言模型一次性读取本站的公开事实、定义、口径与文档内容。最后更新：2026-11-20。内容语言：简体中文（zh-CN）。运营主体品牌：蓝蜻蜓。官网：https://geo.lanqingting.net/ 。
 
 ## 1. 站点实体信息
 
 | 字段 | 值 |
 | --- | --- |
 | 平台名称 | 蓝蜻蜓 |
-| 站点地址 | https://your-domain.example/ |
+| 站点地址 | https://geo.lanqingting.net/ |
 | 内容语言 | 简体中文（zh-CN） |
 | 服务类别 | GEO（生成式引擎优化）诊断、品牌 AI 可见度分析 |
 | 公开内容入口 | /（首页）、/geo/（知识文档）、/llms.txt、/sitemap.xml、/robots.txt |
@@ -73,7 +73,7 @@
 GEO（Generative Engine Optimization）指让品牌与内容更容易被生成式 AI 引擎读取、理解并在回答中引用的优化方法。它与 SEO 共享技术基础（可抓取、语义清晰、结构化数据），但目标从「排名与点击」变为「被引用与被推荐」。可操作框架为四层依赖链：可访问性 → 导航指引 → 可理解性 → 可引用性。常见误区包括：只做关键词堆砌而忽略自包含段落、用 JS 动态注入关键元信息导致爬虫看到旧内容、屏蔽 CSS/JS 或 AI 爬虫 UA、缺少时间与来源标注、把营销口号当作可引用事实。
 
 ### 8.2 llms.txt 是什么，怎么写
-llms.txt 是放在站点根目录的纯 Markdown 文件，用简洁的标题、简介与链接列表帮助大语言模型快速理解站点结构与可信内容来源。推荐结构：一个 H1 站点名、一段 blockquote 简介、若干 H2 分区（能力、文档、常见问题、不供索引区域、联系与合规），每条链接用 `- [标题](URL): 说明` 形式。它不替代 robots.txt（控制抓取权限）与 sitemap.xml（列出可抓取 URL），三者分工不同。进阶可提供 llms-full.txt 作为完整版。本站自身在 https://your-domain.example/llms.txt 提供了可直接参考的实例。
+llms.txt 是放在站点根目录的纯 Markdown 文件，用简洁的标题、简介与链接列表帮助大语言模型快速理解站点结构与可信内容来源。推荐结构：一个 H1 站点名、一段 blockquote 简介、若干 H2 分区（能力、文档、常见问题、不供索引区域、联系与合规），每条链接用 `- [标题](URL): 说明` 形式。它不替代 robots.txt（控制抓取权限）与 sitemap.xml（列出可抓取 URL），三者分工不同。进阶可提供 llms-full.txt 作为完整版。本站自身在 https://geo.lanqingting.net/llms.txt 提供了可直接参考的实例。
 
 ### 8.3 主流 AI 爬虫清单与 robots.txt 配置
 需要显式放行的 8 类爬虫：GPTBot（OpenAI 训练抓取）、OAI-SearchBot（OpenAI 搜索索引）、Google-Extended（Gemini / AI Overviews 用途）、ClaudeBot（Anthropic）、PerplexityBot（Perplexity 检索）、Bytespider（字节/豆包）、CCBot（Common Crawl，众多模型训练语料来源）、Bingbot（Bing / Copilot）。建议逐 UA 写 `Allow: /`，而不是只依赖 `User-agent: *` 的默认允许；同时用 `Disallow` 屏蔽后台、API 与私有目录，并在文件末尾声明 Sitemap。自检方法：用自家官网 GEO 诊断跑一次，查看「AI 爬虫 robots 规则」是否 8/8 通过。

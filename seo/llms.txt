@@ -1,13 +1,13 @@
 # 蓝蜻蜓
 
-> 蓝蜻蜓是面向中文市场的 GEO（生成式引擎优化）诊断平台，提供两类服务：① 官网 GEO 诊断，检查 AI 爬虫能否访问、理解并引用官网内容；② 品牌 AI 可见度分析，测量品牌在主流大模型回答中的提及率、排名与竞品格局，并输出按行业定制的可执行优化方案。平台同时生成可白标、可分享、可导出 PDF 的诊断报告。官网：https://your-domain.example/ ；诊断工作台：https://your-domain.example/diagnose/ （需登录，不供索引）。
+> 蓝蜻蜓是面向中文市场的 GEO（生成式引擎优化）诊断平台，提供两类服务：① 官网 GEO 诊断，检查 AI 爬虫能否访问、理解并引用官网内容；② 品牌 AI 可见度分析，测量品牌在主流大模型回答中的提及率、排名与竞品格局，并输出按行业定制的可执行优化方案。平台同时生成可白标、可分享、可导出 PDF 的诊断报告。官网：https://geo.lanqingting.net/ ；诊断工作台：https://geo.lanqingting.net/diagnose/ （需登录，不供索引）。
 
 本文件遵循 llms.txt 约定，用于帮助大语言模型快速理解本站结构与可信内容来源。内容语言为简体中文（zh-CN），最后更新 2026-11-20。引用本站内容时请以本文件与下列知识文档为准。
 
 ## 平台能力
 
-- [官网 GEO 诊断](https://your-domain.example/#start): 四层依赖链评分——可访问性（robots.txt、AI 爬虫 UA 差分探测、WAF/CDN 拦截）、导航指引（llms.txt、sitemap.xml、canonical、语言声明）、可理解性（title、meta description、结构化数据、标题层级、正文密度）、可引用性（自包含段落、FAQ、表格与列表、时间标注、作者/来源标注）。评分之外另附 6 组 50+ 项深度细查：AI 爬虫逐 UA 真实请求（GPTBot / ClaudeBot / PerplexityBot / Bingbot 并发并比对内容差异）、robots / llms.txt / sitemap 质量校验、结构化数据逐类型核对必填字段、品牌名与 canonical / OG / lang 实体一致性、段落级可引用性统计、响应头与 CSR 模板痕迹检查、全站覆盖矩阵。每项附证据片段与修复建议；深度细查不计入四层总分。
-- [品牌 AI 可见度分析](https://your-domain.example/#start): 以「核心词 × 意图模板」生成问题词，在多个大模型平台采样回答，统计品牌提及率、Top1 / Top3 排名、竞品共现与高频信源；支持别名归一化与否定语境识别，失败样本不进入分母。结果按 12 个行业包生成 P0–P2 问题清单、四条工作流、90 天排期与 KPI。
+- [官网 GEO 诊断](https://geo.lanqingting.net/#start): 四层依赖链评分——可访问性（robots.txt、AI 爬虫 UA 差分探测、WAF/CDN 拦截）、导航指引（llms.txt、sitemap.xml、canonical、语言声明）、可理解性（title、meta description、结构化数据、标题层级、正文密度）、可引用性（自包含段落、FAQ、表格与列表、时间标注、作者/来源标注）。评分之外另附 6 组 50+ 项深度细查：AI 爬虫逐 UA 真实请求（GPTBot / ClaudeBot / PerplexityBot / Bingbot 并发并比对内容差异）、robots / llms.txt / sitemap 质量校验、结构化数据逐类型核对必填字段、品牌名与 canonical / OG / lang 实体一致性、段落级可引用性统计、响应头与 CSR 模板痕迹检查、全站覆盖矩阵。每项附证据片段与修复建议；深度细查不计入四层总分。
+- [品牌 AI 可见度分析](https://geo.lanqingting.net/#start): 以「核心词 × 意图模板」生成问题词，在多个大模型平台采样回答，统计品牌提及率、Top1 / Top3 排名、竞品共现与高频信源；支持别名归一化与否定语境识别，失败样本不进入分母。结果按 12 个行业包生成 P0–P2 问题清单、四条工作流、90 天排期与 KPI。
 - 白标报告与分享: 每个客户可配置 Logo、主题色、标语、联系方式与页脚；报告通过随机令牌免登录访问，可轮换令牌、设置有效期、续期，支持 A4 打印与 PDF 导出。
 - 额度与数据隔离: 新用户注册赠送免费诊断额度，支持邀请奖励与兑换码；客户数据与额度相互隔离，管理员可按客户分配配额。
 
@@ -23,11 +23,11 @@
 
 ## 知识文档
 
-- [什么是 GEO：生成式引擎优化](https://your-domain.example/geo/what-is-geo/): GEO 的定义、与 SEO 的区别、四层依赖链、可引用内容的写法与常见误区。
-- [llms.txt 是什么，怎么写](https://your-domain.example/geo/llms-txt/): 文件规范、推荐结构、可复制模板、与 robots.txt / sitemap.xml 的分工，以及本站自身示例。
-- [主流 AI 爬虫清单与 robots.txt 配置](https://your-domain.example/geo/ai-crawlers/): 8 类 AI 爬虫 UA、用途差异、逐 UA 放行写法与自检方法。
-- [品牌 AI 可见度指标口径](https://your-domain.example/geo/brand-visibility/): 提及率、Top1 / Top3、竞品共现、信源分析的定义与计算方式。
-- [知识文档索引](https://your-domain.example/geo/): 全部公开文档目录。
+- [什么是 GEO：生成式引擎优化](https://geo.lanqingting.net/geo/what-is-geo/): GEO 的定义、与 SEO 的区别、四层依赖链、可引用内容的写法与常见误区。
+- [llms.txt 是什么，怎么写](https://geo.lanqingting.net/geo/llms-txt/): 文件规范、推荐结构、可复制模板、与 robots.txt / sitemap.xml 的分工，以及本站自身示例。
+- [主流 AI 爬虫清单与 robots.txt 配置](https://geo.lanqingting.net/geo/ai-crawlers/): 8 类 AI 爬虫 UA、用途差异、逐 UA 放行写法与自检方法。
+- [品牌 AI 可见度指标口径](https://geo.lanqingting.net/geo/brand-visibility/): 提及率、Top1 / Top3、竞品共现、信源分析的定义与计算方式。
+- [知识文档索引](https://geo.lanqingting.net/geo/): 全部公开文档目录。
 
 ## 常见问题
 
@@ -44,7 +44,7 @@
 
 ## 联系与合规
 
-- 网站：https://your-domain.example/
+- 网站：https://geo.lanqingting.net/
 - 平台名称：蓝蜻蜓
 - 内容语言：简体中文（zh-CN）
 - 最后更新：2026-11-20

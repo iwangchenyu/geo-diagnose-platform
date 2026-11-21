@@ -32,7 +32,7 @@ if (!function_exists('seoBase')) {
         if ($v !== '' && preg_match('#^https?://[A-Za-z0-9\-._]+(?::\d{1,5})?/$#', $v)) {
             return $v;
         }
-        return defined('SEO_BASE_URL') ? rtrim(SEO_BASE_URL, '/') . '/' : 'https://your-domain.example/';
+        return defined('SEO_BASE_URL') ? rtrim(SEO_BASE_URL, '/') . '/' : 'https://geo.lanqingting.net/';
     }
 }
 
