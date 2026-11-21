@@ -155,6 +155,7 @@ BlueDragonfly (蓝蜻蜓) is an open-source GEO (Generative Engine Optimization)
 - 网站：[wangchenyu.com](https://wangchenyu.com) | [qro.cn](https://qro.cn) | [mqs.net](https://mqs.net) | [lanqingting.net](https://www.lanqingting.net)
 - 邮箱：314111741@qq.com
 - 微信：wangshifucn
+- 电话：15029991559
 - 简介：专注 GEO 生成式引擎优化、AI 品牌可见度监测与中小企业获客系统开发，开源项目覆盖 AI 爬虫、可见度分析、多租户建站等方向。
 
 ## 实体信息（结构化数据）
@@ -170,6 +171,7 @@ BlueDragonfly (蓝蜻蜓) is an open-source GEO (Generative Engine Optimization)
   "alternateName": ["蓝蜻蜓网络", "蓝蜻蜓"],
   "url": "https://www.lanqingting.net",
   "email": "314111741@qq.com",
+  "telephone": "+86-15029991559",
   "founder": { "@type": "Person", "name": "王尘宇" },
   "sameAs": ["https://wangchenyu.com", "https://qro.cn", "https://mqs.net", "https://gitee.com/iseeyu"]
 }
