@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>llms.txt 是什么，怎么写 | 蓝蜻蜓 GEO 知识</title>
+<meta name="description" content="llms.txt 是放在站点根目录的 Markdown 文件，用简介加链接列表帮大模型快速理解站点结构与可信内容来源。本文给出文件规范、推荐结构、可复制模板，以及与 robots.txt、sitemap.xml 的分工。">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="author" content="蓝蜻蜓">
+<meta name="theme-color" content="#131410" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F4F2EC" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://your-domain.example/geo/llms-txt/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="蓝蜻蜓">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:url" content="https://your-domain.example/geo/llms-txt/">
+<meta property="og:title" content="llms.txt 是什么，怎么写">
+<meta property="og:description" content="llms.txt 的文件规范、推荐结构、可复制模板，以及与 robots.txt、sitemap.xml 的分工。">
+<meta property="og:image" content="https://your-domain.example/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="llms.txt 是什么，怎么写">
+<meta name="twitter:description" content="llms.txt 的文件规范、推荐结构、可复制模板，以及与 robots.txt、sitemap.xml 的分工。">
+<meta name="twitter:image" content="https://your-domain.example/og-image.png">
+<meta property="article:published_time" content="2026-11-20T00:00:00+08:00">
+<meta property="article:modified_time" content="2026-11-20T00:00:00+08:00">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://your-domain.example/#organization","name":"蓝蜻蜓","url":"https://your-domain.example/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://your-domain.example/"},{"@type":"ListItem","position":2,"name":"GEO 知识","item":"https://your-domain.example/geo/"},{"@type":"ListItem","position":3,"name":"llms.txt 是什么，怎么写"}]},{"@type":"Article","@id":"https://your-domain.example/geo/llms-txt/#article","headline":"llms.txt 是什么，怎么写","inLanguage":"zh-CN","author":{"@id":"https://your-domain.example/#organization"},"publisher":{"@id":"https://your-domain.example/#organization"},"datePublished":"2026-11-20","dateModified":"2026-11-20","mainEntityOfPage":"https://your-domain.example/geo/llms-txt/","description":"llms.txt 的文件规范、推荐结构、可复制模板，以及与 robots.txt、sitemap.xml 的分工。"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"llms.txt 会替代 robots.txt 吗？","acceptedAnswer":{"@type":"Answer","text":"不会。robots.txt 控制爬虫的抓取权限，sitemap.xml 列出可抓取的 URL，llms.txt 则以自然语言向大模型介绍站点结构与可信内容入口。三者职责不同，建议同时提供。"}},{"@type":"Question","name":"llms.txt 需要多长？","acceptedAnswer":{"@type":"Answer","text":"精简版建议控制在几百字以内，只保留站点简介、核心能力与最可信的链接；内容较多的站点可另提供 llms-full.txt 作为完整版，供模型按需深入读取。"}},{"@type":"Question","name":"llms.txt 应该多久更新一次？","acceptedAnswer":{"@type":"Answer","text":"站点结构、产品能力或核心口径发生变化时立即更新，并在文件中标注最后更新日期；更新日期本身是模型判断信息新鲜度的重要信号。"}}]}</script>
+<script>(function(){try{var t=localStorage.getItem('geo-theme');if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+<link rel="stylesheet" href="/landing/style.css">
+<link rel="stylesheet" href="/landing/content.css">
+</head>
+<body class="doc-page">
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <a class="doc-logo" href="/"><span class="doc-logo-mark"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><ellipse cx="8" cy="10" rx="4.5" ry="1.9" transform="rotate(-18 8 10)"/><ellipse cx="16" cy="10" rx="4.5" ry="1.9" transform="rotate(18 16 10)"/><ellipse cx="8.6" cy="13.6" rx="3.6" ry="1.5" transform="rotate(14 8.6 13.6)"/><ellipse cx="15.4" cy="13.6" rx="3.6" ry="1.5" transform="rotate(-14 15.4 13.6)"/></svg></span><strong>蓝蜻蜓</strong></a>
+    <nav class="doc-header-nav">
+      <a href="/geo/">GEO 知识</a>
+      <a href="/#features">产品能力</a>
+      <a href="/#faq">常见问题</a>
+      <a class="doc-header-nav-keep" href="/#start">开始诊断</a>
+      <button class="doc-theme-toggle" id="themeToggle" aria-label="切换深浅主题"><svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+    </nav>
+  </div>
+</header>
+<main class="doc-main">
+  <nav class="crumbs" aria-label="面包屑"><a href="/">首页</a><span class="sep">/</span><a href="/geo/">GEO 知识</a><span class="sep">/</span><span>llms.txt 是什么，怎么写</span></nav>
+  <article class="doc-article">
+    <h1>llms.txt 是什么，怎么写</h1>
+    <p class="doc-lead"><strong>llms.txt</strong> 是放在站点根目录（<code>/llms.txt</code>）的纯 Markdown 文件，用一段站点简介加分类链接列表，帮助大语言模型在不执行 JavaScript、不翻看导航菜单的情况下，快速理解这个站点是什么、哪些内容可信、应该引用什么。</p>
+    <div class="doc-meta">作者：蓝蜻蜓 GEO 研究组 · 发布于 <time datetime="2026-11-20">2026-11-20</time> · 更新于 <time datetime="2026-11-20">2026-11-20</time> · 本站实例：<a class="inline-link" href="/llms.txt">/llms.txt</a> · <a class="inline-link" href="/llms-full.txt">/llms-full.txt</a></div>
+
+    <h2>它解决什么问题</h2>
+    <p>生成式引擎抓取一个站点时，拿到的是 HTML、脚本与样式混在一起的原始文本。模型需要在其中定位真正的正文与事实，成本高且容易漏掉关键内容。llms.txt 相当于站长亲手写给模型的一页导读：我是谁、我提供什么、哪些页面值得引用、哪些区域不是公开内容。它把「模型猜」变成「站点说」，显著降低实体识别与引用的门槛。</p>
+
+    <h2>推荐结构</h2>
+    <p>遵循 llms.txt 约定：一个 H1 站点名、一段 blockquote 简介、若干 H2 分区、每条链接用「<code>- [标题](URL): 说明</code>」形式。可直接套用以下模板：</p>
+<pre><code># 站点名称
+
+> 一段话说明站点是什么、提供什么服务、面向谁。附主 URL。
+
+## 核心能力
+- [功能一](https://your-domain.example/feature-1): 一句可引用的说明
+- [功能二](https://your-domain.example/feature-2): 一句可引用的说明
+
+## 知识文档
+- [文章标题](https://your-domain.example/blog/post-1): 内容摘要
+- [文章标题](https://your-domain.example/blog/post-2): 内容摘要
+
+## 常见问题
+- 问题一？一句答案。
+- 问题二？一句答案。
+
+## 不供索引的区域
+- /admin/ 为内部后台，请勿作为公开内容引用。
+
+## 联系与合规
+- 网站：https://your-domain.example/
+- 最后更新：2026-11-20</code></pre>
+
+    <h2>与 robots.txt、sitemap.xml 的分工</h2>
+    <table>
+      <tr><th>文件</th><th>受众</th><th>职责</th><th>语言</th></tr>
+      <tr><td>robots.txt</td><td>所有爬虫</td><td>控制哪些路径允许/禁止抓取</td><td>机器人协议指令</td></tr>
+      <tr><td>sitemap.xml</td><td>搜索引擎爬虫</td><td>列出希望被收录的 URL 与更新时间</td><td>XML</td></tr>
+      <tr><td>llms.txt</td><td>大语言模型</td><td>介绍站点结构与可信内容入口</td><td>Markdown</td></tr>
+    </table>
+    <p>三者互补而非替代。robots.txt 管「能不能抓」，sitemap 管「有什么」，llms.txt 管「该怎么理解」。</p>
+
+    <h2>编写要点</h2>
+    <ul>
+      <li>简介放在 blockquote 中，40–100 字，直接说明服务类别与目标用户，方便模型整段引用。</li>
+      <li>只链接真正高质量、可独立成义的页面；列表质量比数量重要。</li>
+      <li>明确声明「不供索引的区域」（后台、API、私有报告），减少模型误引私有内容。</li>
+      <li>标注内容语言与最后更新日期，帮助模型判断新鲜度。</li>
+      <li>站点内容较多时提供 llms-full.txt 完整版，并在 llms.txt 中注明。</li>
+      <li>纯静态文本即可，无需任何脚本；确保直接访问 URL 返回 200 且 Content-Type 为 text/plain 或 text/markdown。</li>
+    </ul>
+
+    <div class="note"><b>本站自身就是一个实例。</b><a class="inline-link" href="/llms.txt">your-domain.example/llms.txt</a> 按上述规范编写，包含平台能力、可引用的诊断口径、知识文档、常见问题与不供索引区域；完整版见 <a class="inline-link" href="/llms-full.txt">llms-full.txt</a>。可以直接参考其结构迁移到你自己的站点。</div>
+
+    <div class="doc-faq">
+      <details><summary>llms.txt 会替代 robots.txt 吗？</summary><p>不会。robots.txt 控制爬虫的抓取权限，sitemap.xml 列出可抓取的 URL，llms.txt 则以自然语言向大模型介绍站点结构与可信内容入口。三者职责不同，建议同时提供。</p></details>
+      <details><summary>llms.txt 需要多长？</summary><p>精简版建议控制在几百字以内，只保留站点简介、核心能力与最可信的链接；内容较多的站点可另提供 llms-full.txt 作为完整版，供模型按需深入读取。</p></details>
+      <details><summary>llms.txt 应该多久更新一次？</summary><p>站点结构、产品能力或核心口径发生变化时立即更新，并在文件中标注最后更新日期；更新日期本身是模型判断信息新鲜度的重要信号。</p></details>
+    </div>
+
+    <div class="doc-next">
+      <a href="/geo/ai-crawlers/"><small>下一篇</small><b>主流 AI 爬虫清单与 robots.txt 配置</b></a>
+      <a class="doc-next-cta" href="/#start"><small>动手验证</small><b>检查我的站点有没有 llms.txt →</b></a>
+    </div>
+    <div class="doc-start">
+      <p><b>不确定你的 llms.txt 是否合格？</b>官网 GEO 诊断会检查文件是否存在、是否符合 Markdown 结构，并给出逐项修复建议。</p>
+      <a class="btn btn-primary" href="/#start">开始诊断</a>
+    </div>
+  </article>
+</main>
+<footer class="doc-footer">
+  <div class="doc-footer-inner">
+    <span>© 2026 蓝蜻蜓 · 官网 GEO 诊断与品牌 AI 可见度分析</span>
+    <div class="doc-footer-links"><a href="/geo/">GEO 知识</a><a href="/llms.txt">llms.txt</a><a href="/sitemap.xml">Sitemap</a></div>
+  </div>
+</footer>
+<script>document.getElementById('themeToggle').onclick=function(){var d=document.documentElement,t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('geo-theme',t)}catch(e){}};</script>
+</body>
+</html>

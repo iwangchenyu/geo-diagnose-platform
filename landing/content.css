@@ -1,0 +1,97 @@
+/* ============================================================
+   GEO 知识区 + 内容页共用样式（Editorial 约束：
+   单强调色、纸感底、衬线标题、无渐变/发光/玻璃）
+   新增样式统一写在本文件，不改动 style.css 与其覆盖层。
+   ============================================================ */
+
+/* ---- 落地页：GEO 知识区 ---- */
+.span-6{grid-column:span 6}
+.inline-link{color:var(--primary);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.guide-quote{max-width:880px;margin:0 auto 26px;border-left:3px solid var(--primary);padding:6px 0 6px 24px}
+.guide-quote p{margin:0;font-size:15px;line-height:2;color:var(--ink)}
+.guide-meta{margin-top:12px;font-size:12px;color:var(--faint)}
+.card-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:13px;font-weight:650;color:var(--primary);text-decoration:none}
+.card-link .ico{width:15px;height:15px}
+.card-link:hover{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:720px){
+  .guide-quote{padding-left:16px}
+  .guide-quote p{font-size:14px}
+}
+
+/* ---- 内容页：页面骨架 ---- */
+.doc-page{min-height:100vh;display:flex;flex-direction:column;background:var(--bg)}
+.doc-header{border-bottom:1px solid var(--border);background:var(--bg-2)}
+.doc-header-inner{max-width:920px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.doc-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.doc-logo-mark{width:30px;height:30px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;background:var(--primary);border-radius:var(--r-xs)}
+.doc-logo-mark svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2}
+.doc-logo strong{font-family:var(--font-display);font-size:16px;letter-spacing:-.01em}
+.doc-header-nav{display:flex;align-items:center;gap:18px;font-size:13px}
+.doc-header-nav a{color:var(--sub);text-decoration:none}
+.doc-header-nav a:hover{color:var(--primary)}
+.doc-theme-toggle{background:none;border:1px solid var(--border-2);border-radius:var(--r-xs);padding:7px 9px;cursor:pointer;color:var(--sub);display:inline-flex}
+.doc-theme-toggle:hover{color:var(--ink);border-color:var(--primary)}
+.doc-theme-toggle svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8}
+.doc-theme-toggle .i-moon{display:none}
+html[data-theme="dark"] .doc-theme-toggle .i-sun{display:none}
+html[data-theme="dark"] .doc-theme-toggle .i-moon{display:block}
+
+/* ---- 内容页：文章排版 ---- */
+.doc-main{flex:1;width:100%;max-width:920px;margin:0 auto;padding:44px 24px 72px}
+.crumbs{font-size:12.5px;color:var(--faint);margin-bottom:26px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.crumbs a{color:var(--sub);text-decoration:none}
+.crumbs a:hover{color:var(--primary)}
+.crumbs .sep{color:var(--faint)}
+.doc-article h1{font-family:var(--font-display);font-size:clamp(1.7rem,3.2vw,2.3rem);line-height:1.35;letter-spacing:-.02em;color:var(--ink);margin:0 0 14px}
+.doc-lead{font-size:15.5px;line-height:2;color:var(--sub);margin:0 0 10px}
+.doc-meta{font-size:12.5px;color:var(--faint);border-bottom:1px solid var(--border);padding-bottom:18px;margin-bottom:34px}
+.doc-meta .inline-link{color:var(--primary)}
+.doc-article h2{font-family:var(--font-display);font-size:20px;letter-spacing:-.015em;color:var(--ink);margin:42px 0 14px;padding-top:6px}
+.doc-article h3{font-size:15.5px;color:var(--ink);margin:26px 0 10px}
+.doc-article p{font-size:14.5px;line-height:2.05;color:var(--text);margin:0 0 14px}
+.doc-article ul,.doc-article ol{margin:0 0 14px;padding-left:22px}
+.doc-article li{font-size:14px;line-height:1.95;color:var(--text);margin-bottom:7px}
+.doc-article strong{color:var(--ink)}
+.doc-article code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-xs);padding:1.5px 6px;color:var(--primary)}
+.doc-article pre{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-sm);padding:16px 18px;overflow-x:auto;margin:0 0 16px}
+.doc-article pre code{background:none;border:0;padding:0;font-size:12.5px;line-height:1.75;color:var(--sub);white-space:pre}
+.doc-article table{width:100%;border-collapse:collapse;margin:0 0 16px;font-size:13px}
+.doc-article th{font-family:var(--font-display);text-align:left;font-weight:700;color:var(--ink);border-bottom:2px solid var(--border-2);padding:9px 12px;white-space:nowrap}
+.doc-article td{border-bottom:1px solid var(--border);padding:9px 12px;color:var(--text);line-height:1.8;vertical-align:top}
+.doc-article blockquote{margin:0 0 16px;border-left:3px solid var(--primary);padding:4px 0 4px 20px;color:var(--sub);font-size:14px;line-height:2}
+.note{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-sm);padding:14px 18px;font-size:13px;line-height:1.9;color:var(--sub);margin:0 0 16px}
+.note b{color:var(--primary)}
+
+/* ---- 内容页：FAQ ---- */
+.doc-faq{margin:44px 0 0;border-top:1px solid var(--border);padding-top:10px}
+.doc-faq details{border-bottom:1px solid var(--border)}
+.doc-faq summary{cursor:pointer;padding:15px 0;font-size:14.5px;font-weight:650;color:var(--ink);list-style:none}
+.doc-faq summary::-webkit-details-marker{display:none}
+.doc-faq summary:before{content:"+";display:inline-block;width:20px;color:var(--primary);font-weight:700}
+.doc-faq details[open] summary:before{content:"−"}
+.doc-faq details p{padding:0 0 16px 20px;margin:0;font-size:13.5px;line-height:2;color:var(--sub)}
+
+/* ---- 内容页：文末导航与页脚 ---- */
+.doc-next{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:46px}
+.doc-next a{display:block;border:1px solid var(--border);border-radius:var(--r-md);padding:16px 18px;text-decoration:none;transition:border-color .2s}
+.doc-next a:hover{border-color:var(--primary)}
+.doc-next small{display:block;font-size:11px;color:var(--faint);margin-bottom:5px}
+.doc-next b{font-size:14px;color:var(--ink);font-weight:650}
+.doc-next .doc-next-cta{border-color:var(--primary);background:var(--bg-2)}
+.doc-next .doc-next-cta b{color:var(--primary)}
+.doc-start{margin-top:40px;border:1px solid var(--border-2);border-radius:var(--r-lg);background:var(--bg-2);padding:26px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.doc-start p{margin:0;font-size:14px;color:var(--sub);line-height:1.9}
+.doc-start p b{color:var(--ink)}
+.doc-footer{border-top:1px solid var(--border);background:var(--bg-2)}
+.doc-footer-inner{max-width:920px;margin:0 auto;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--faint)}
+.doc-footer-inner a{color:var(--sub);text-decoration:none}
+.doc-footer-inner a:hover{color:var(--primary)}
+.doc-footer-links{display:flex;gap:16px;flex-wrap:wrap}
+
+@media(max-width:720px){
+  .doc-header-inner,.doc-main,.doc-footer-inner{padding-left:18px;padding-right:18px}
+  .doc-header-nav a:not(.doc-header-nav-keep){display:none}
+  .doc-next{grid-template-columns:1fr}
+  .doc-start{padding:20px}
+  .doc-article h1{font-size:1.5rem}
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>什么是 GEO：生成式引擎优化 | 蓝蜻蜓 GEO 知识</title>
+<meta name="description" content="GEO（Generative Engine Optimization）指让品牌与内容更容易被生成式 AI 引擎读取、理解并在回答中引用的优化方法。本文讲清 GEO 与 SEO 的区别、四层依赖链框架与可引用内容的写法。">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="author" content="蓝蜻蜓">
+<meta name="theme-color" content="#131410" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F4F2EC" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://your-domain.example/geo/what-is-geo/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="蓝蜻蜓">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:url" content="https://your-domain.example/geo/what-is-geo/">
+<meta property="og:title" content="什么是 GEO：生成式引擎优化">
+<meta property="og:description" content="GEO 与 SEO 的区别、四层依赖链框架、可引用内容的写法与常见误区。">
+<meta property="og:image" content="https://your-domain.example/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="什么是 GEO：生成式引擎优化">
+<meta name="twitter:description" content="GEO 与 SEO 的区别、四层依赖链框架、可引用内容的写法与常见误区。">
+<meta name="twitter:image" content="https://your-domain.example/og-image.png">
+<meta property="article:published_time" content="2026-11-20T00:00:00+08:00">
+<meta property="article:modified_time" content="2026-11-20T00:00:00+08:00">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://your-domain.example/#organization","name":"蓝蜻蜓","url":"https://your-domain.example/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://your-domain.example/"},{"@type":"ListItem","position":2,"name":"GEO 知识","item":"https://your-domain.example/geo/"},{"@type":"ListItem","position":3,"name":"什么是 GEO：生成式引擎优化"}]},{"@type":"Article","@id":"https://your-domain.example/geo/what-is-geo/#article","headline":"什么是 GEO：生成式引擎优化","inLanguage":"zh-CN","author":{"@id":"https://your-domain.example/#organization"},"publisher":{"@id":"https://your-domain.example/#organization"},"datePublished":"2026-11-20","dateModified":"2026-11-20","mainEntityOfPage":"https://your-domain.example/geo/what-is-geo/","description":"GEO 与 SEO 的区别、四层依赖链框架、可引用内容的写法与常见误区。"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"GEO 和 SEO 需要二选一吗？","acceptedAnswer":{"@type":"Answer","text":"不需要。两者共享可抓取性、语义化与结构化数据基础，一套健康的技术底座同时服务 SEO 与 GEO。区别在于内容策略：SEO 侧重关键词覆盖与排名，GEO 侧重自包含事实段落、时间与来源标注、实体信息一致。"}},{"@type":"Question","name":"怎么判断我的官网内容是否可被 AI 引用？","acceptedAnswer":{"@type":"Answer","text":"最直接的检验标准是：把一段内容单独截出来放进 AI 的回答里，是否仍然成立、仍然有信息量。如果一段话依赖「如上所述」「这个功能」等指代词才能理解，AI 就很难整段摘用它。可以用官网 GEO 诊断的可引用性层做逐项检查。"}},{"@type":"Question","name":"GEO 优化多久能看到效果？","acceptedAnswer":{"@type":"Answer","text":"技术放行层（robots、llms.txt、结构化数据）的修复通常在重新抓取后即可生效，周期以天计；品牌可见度的提升依赖内容被收录与引用的积累，通常按 90 天为一个观察周期进行复测。"}}]}</script>
+<script>(function(){try{var t=localStorage.getItem('geo-theme');if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+<link rel="stylesheet" href="/landing/style.css">
+<link rel="stylesheet" href="/landing/content.css">
+</head>
+<body class="doc-page">
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <a class="doc-logo" href="/"><span class="doc-logo-mark"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><ellipse cx="8" cy="10" rx="4.5" ry="1.9" transform="rotate(-18 8 10)"/><ellipse cx="16" cy="10" rx="4.5" ry="1.9" transform="rotate(18 16 10)"/><ellipse cx="8.6" cy="13.6" rx="3.6" ry="1.5" transform="rotate(14 8.6 13.6)"/><ellipse cx="15.4" cy="13.6" rx="3.6" ry="1.5" transform="rotate(-14 15.4 13.6)"/></svg></span><strong>蓝蜻蜓</strong></a>
+    <nav class="doc-header-nav">
+      <a href="/geo/">GEO 知识</a>
+      <a href="/#features">产品能力</a>
+      <a href="/#faq">常见问题</a>
+      <a class="doc-header-nav-keep" href="/#start">开始诊断</a>
+      <button class="doc-theme-toggle" id="themeToggle" aria-label="切换深浅主题"><svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+    </nav>
+  </div>
+</header>
+<main class="doc-main">
+  <nav class="crumbs" aria-label="面包屑"><a href="/">首页</a><span class="sep">/</span><a href="/geo/">GEO 知识</a><span class="sep">/</span><span>什么是 GEO：生成式引擎优化</span></nav>
+  <article class="doc-article">
+    <h1>什么是 GEO：生成式引擎优化</h1>
+    <p class="doc-lead"><strong>GEO（Generative Engine Optimization，生成式引擎优化）</strong>，指让品牌与内容更容易被生成式 AI 引擎（如 ChatGPT、豆包、DeepSeek、千问、Perplexity）读取、理解并在回答中引用的优化方法。它的目标不是搜索结果页的排名，而是成为 AI 回答里被引用的依据。</p>
+    <div class="doc-meta">作者：蓝蜻蜓 GEO 研究组 · 发布于 <time datetime="2026-11-20">2026-11-20</time> · 更新于 <time datetime="2026-11-20">2026-11-20</time> · 完整口径见 <a class="inline-link" href="/llms.txt">llms.txt</a></div>
+
+    <h2>GEO 与 SEO 的区别</h2>
+    <p>两者共享同一套技术底座——可抓取、语义清晰、结构化数据完整。差别出现在目标与内容策略上：</p>
+    <table>
+      <tr><th>维度</th><th>SEO</th><th>GEO</th></tr>
+      <tr><td>目标</td><td>搜索结果页排名与点击</td><td>被 AI 读取、理解，在回答中被引用与推荐</td></tr>
+      <tr><td>流量入口</td><td>搜索引擎结果列表</td><td>大模型生成的直接回答</td></tr>
+      <tr><td>衡量指标</td><td>排名、收录量、点击率</td><td>品牌提及率、Top1 / Top3 位置、引用信源</td></tr>
+      <tr><td>内容侧重</td><td>关键词覆盖、内链结构</td><td>自包含事实段落、定义句、时间与来源标注</td></tr>
+      <tr><td>技术基础</td><td>可抓取性、canonical、sitemap</td><td>AI 爬虫放行、llms.txt、FAQ 与实体一致性</td></tr>
+    </table>
+    <blockquote>一句话概括：SEO 争取「被点开」，GEO 争取「被引用」。AI 回答往往不给第二次点击机会，内容必须在被抓取的当下就具备独立成立的事实价值。</blockquote>
+
+    <h2>四层依赖链：GEO 的可操作框架</h2>
+    <p>官网能否被 AI 正确使用，取决于一条自底向上的依赖链。下层不通，上层的投入会被大幅稀释：</p>
+    <ol>
+      <li><strong>可访问性（Access）</strong>——AI 爬虫能否拿到页面。检查 robots.txt 逐 UA 规则、HTTPS、WAF/CDN 对 AI 爬虫的差分拦截。</li>
+      <li><strong>导航指引（Orientation）</strong>——AI 能否找到重要内容。检查 llms.txt、sitemap.xml、canonical、语言声明。</li>
+      <li><strong>可理解性（Understanding）</strong>——AI 能否读懂语义。检查 title、description、JSON-LD 结构化数据、标题层级、正文密度。</li>
+      <li><strong>可引用性（Quotability）</strong>——AI 能否整段摘用。检查自包含事实段落、FAQ、表格列表、时间与作者标注。</li>
+    </ol>
+
+    <h2>可引用内容怎么写</h2>
+    <ul>
+      <li><strong>自包含</strong>：一段话自带主语、结论、条件与数据，脱离上下文仍成立，不含「如上所述」「这个功能」等指代。</li>
+      <li><strong>定义句先行</strong>：每个概念先用一句话定义，再展开细节。生成式引擎对「X 是指……」句式的引用率显著更高。</li>
+      <li><strong>具体数据</strong>：用数字、年份、百分比代替「行业领先」「效率大幅提升」等模糊表述。</li>
+      <li><strong>时间与来源</strong>：标注发布与更新时间、作者或机构，帮助 AI 判断新鲜度与可信度。</li>
+      <li><strong>实体一致</strong>：品牌名、产品名在 title、正文、结构化数据、页脚中保持完全一致，避免别名混用造成实体分裂。</li>
+    </ul>
+    <p>反例：<em>「我们的方案能大幅提升效果，如上所述，选择我们就是选择放心。」</em>——无事实、有指代，AI 无法引用。</p>
+    <p>正例：<em>「蓝蜻蜓官网 GEO 诊断将可访问性、导航指引、可理解性、可引用性四层按 30%、20%、25%、25% 加权为 100 分制得分，并对 sitemap 内页做最多 3 页的抽样抓取。」</em>——独立成义、含数据，可直接被 AI 摘用。</p>
+
+    <h2>常见误区</h2>
+    <ul>
+      <li>用 JavaScript 动态注入 title、og 标签或结构化数据，导致不执行 JS 的 AI 爬虫看到旧内容或空内容。</li>
+      <li>屏蔽 CSS/JS 或对 AI 爬虫 UA 差分拦截，破坏搜索引擎渲染评估并直接失去引用机会。</li>
+      <li>只做关键词堆砌，缺少可以整段摘取的事实段落。</li>
+      <li>关键页面缺少时间与来源标注，AI 无法判断信息新鲜度。</li>
+      <li>同域名下混入无关应用，manifest、404 页面、标题中出现另一品牌名，造成实体混淆。</li>
+    </ul>
+
+    <div class="doc-faq">
+      <details><summary>GEO 和 SEO 需要二选一吗？</summary><p>不需要。两者共享可抓取性、语义化与结构化数据基础，一套健康的技术底座同时服务 SEO 与 GEO。区别在于内容策略：SEO 侧重关键词覆盖与排名，GEO 侧重自包含事实段落、时间与来源标注、实体信息一致。</p></details>
+      <details><summary>怎么判断我的官网内容是否可被 AI 引用？</summary><p>最直接的检验标准是：把一段内容单独截出来放进 AI 的回答里，是否仍然成立、仍然有信息量。如果一段话依赖「如上所述」「这个功能」等指代词才能理解，AI 就很难整段摘用它。可以用官网 GEO 诊断的可引用性层做逐项检查。</p></details>
+      <details><summary>GEO 优化多久能看到效果？</summary><p>技术放行层（robots、llms.txt、结构化数据）的修复通常在重新抓取后即可生效，周期以天计；品牌可见度的提升依赖内容被收录与引用的积累，通常按 90 天为一个观察周期进行复测。</p></details>
+    </div>
+
+    <div class="doc-next">
+      <a href="/geo/llms-txt/"><small>下一篇</small><b>llms.txt 是什么，怎么写</b></a>
+      <a class="doc-next-cta" href="/#start"><small>动手验证</small><b>诊断我的官网 GEO 得分 →</b></a>
+    </div>
+    <div class="doc-start">
+      <p><b>检查你的官网是否满足这四层。</b>填写官网地址，几分钟内得到逐项得分、问题清单与修复建议。</p>
+      <a class="btn btn-primary" href="/#start">开始诊断</a>
+    </div>
+  </article>
+</main>
+<footer class="doc-footer">
+  <div class="doc-footer-inner">
+    <span>© 2026 蓝蜻蜓 · 官网 GEO 诊断与品牌 AI 可见度分析</span>
+    <div class="doc-footer-links"><a href="/geo/">GEO 知识</a><a href="/llms.txt">llms.txt</a><a href="/sitemap.xml">Sitemap</a></div>
+  </div>
+</footer>
+<script>document.getElementById('themeToggle').onclick=function(){var d=document.documentElement,t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('geo-theme',t)}catch(e){}};</script>
+</body>
+</html>

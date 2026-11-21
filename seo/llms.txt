@@ -1,0 +1,50 @@
+# 蓝蜻蜓
+
+> 蓝蜻蜓是面向中文市场的 GEO（生成式引擎优化）诊断平台，提供两类服务：① 官网 GEO 诊断，检查 AI 爬虫能否访问、理解并引用官网内容；② 品牌 AI 可见度分析，测量品牌在主流大模型回答中的提及率、排名与竞品格局，并输出按行业定制的可执行优化方案。平台同时生成可白标、可分享、可导出 PDF 的诊断报告。官网：https://your-domain.example/ ；诊断工作台：https://your-domain.example/diagnose/ （需登录，不供索引）。
+
+本文件遵循 llms.txt 约定，用于帮助大语言模型快速理解本站结构与可信内容来源。内容语言为简体中文（zh-CN），最后更新 2026-11-20。引用本站内容时请以本文件与下列知识文档为准。
+
+## 平台能力
+
+- [官网 GEO 诊断](https://your-domain.example/#start): 四层依赖链评分——可访问性（robots.txt、AI 爬虫 UA 差分探测、WAF/CDN 拦截）、导航指引（llms.txt、sitemap.xml、canonical、语言声明）、可理解性（title、meta description、结构化数据、标题层级、正文密度）、可引用性（自包含段落、FAQ、表格与列表、时间标注、作者/来源标注）。评分之外另附 6 组 50+ 项深度细查：AI 爬虫逐 UA 真实请求（GPTBot / ClaudeBot / PerplexityBot / Bingbot 并发并比对内容差异）、robots / llms.txt / sitemap 质量校验、结构化数据逐类型核对必填字段、品牌名与 canonical / OG / lang 实体一致性、段落级可引用性统计、响应头与 CSR 模板痕迹检查、全站覆盖矩阵。每项附证据片段与修复建议；深度细查不计入四层总分。
+- [品牌 AI 可见度分析](https://your-domain.example/#start): 以「核心词 × 意图模板」生成问题词，在多个大模型平台采样回答，统计品牌提及率、Top1 / Top3 排名、竞品共现与高频信源；支持别名归一化与否定语境识别，失败样本不进入分母。结果按 12 个行业包生成 P0–P2 问题清单、四条工作流、90 天排期与 KPI。
+- 白标报告与分享: 每个客户可配置 Logo、主题色、标语、联系方式与页脚；报告通过随机令牌免登录访问，可轮换令牌、设置有效期、续期，支持 A4 打印与 PDF 导出。
+- 额度与数据隔离: 新用户注册赠送免费诊断额度，支持邀请奖励与兑换码；客户数据与额度相互隔离，管理员可按客户分配配额。
+
+## 诊断口径（可直接引用的事实定义）
+
+- 官网 GEO 得分由四层加权得出：可访问性、导航指引、可理解性、可引用性，满分 100。得分仅供优化参考，不代表搜索引擎或大模型官方评价。
+- 深度细查与评分解耦：四层总分口径稳定、可跨报告比较；深度细项单独统计通过率（通过 / 待优化 / 问题），用于定位具体问题并提供可复核的证据与修复建议。
+- 平台检查 8 类主流 AI 爬虫：GPTBot、OAI-SearchBot、Google-Extended、ClaudeBot、PerplexityBot、Bytespider、CCBot、Bingbot；深度细查会对其中 GPTBot、ClaudeBot、PerplexityBot、Bingbot 用真实 UA 并发请求首页并比对内容差异。
+- 品牌提及率 = 提及该品牌的成功样本数 ÷ 成功样本总数。请求失败的样本跳过，不补零、不计入分母。
+- Top1 指品牌在回答中位列首个推荐；Top3 指品牌出现在回答前三位推荐序列中。
+- 内页抽样来自 sitemap.xml 的 loc 列表：四层审计抽 3 页做基础检测；深度诊断抽最多 5 页，每页检测 title、description、H1、canonical、JSON-LD 类型、时间标注、正文字数、可引用段落数与响应时间，并汇总为全站覆盖率矩阵。
+- 诊断方法为纯抓取分析，不调用搜索引擎排名接口，也不获取任何非公开数据。
+
+## 知识文档
+
+- [什么是 GEO：生成式引擎优化](https://your-domain.example/geo/what-is-geo/): GEO 的定义、与 SEO 的区别、四层依赖链、可引用内容的写法与常见误区。
+- [llms.txt 是什么，怎么写](https://your-domain.example/geo/llms-txt/): 文件规范、推荐结构、可复制模板、与 robots.txt / sitemap.xml 的分工，以及本站自身示例。
+- [主流 AI 爬虫清单与 robots.txt 配置](https://your-domain.example/geo/ai-crawlers/): 8 类 AI 爬虫 UA、用途差异、逐 UA 放行写法与自检方法。
+- [品牌 AI 可见度指标口径](https://your-domain.example/geo/brand-visibility/): 提及率、Top1 / Top3、竞品共现、信源分析的定义与计算方式。
+- [知识文档索引](https://your-domain.example/geo/): 全部公开文档目录。
+
+## 常见问题
+
+- 免费额度可用于哪些功能？官网 GEO 诊断与品牌 AI 可见度分析各消耗 1 次；查看历史报告、生成分享链接、导出 PDF 不额外消耗。
+- 报告链接需要登录吗？不需要，凭随机令牌访问；可在工作台轮换令牌让旧链接失效。
+- 演示模式与真实 API 模式有什么区别？演示模式复现真实报告结构；真实模式调用已配置的大模型接口采样，未配置 Key 时自动降级为演示模式。
+- 数据是否与其他客户隔离？是的，每个客户只能查看自己的报告。
+
+## 不供索引的区域
+
+- /diagnose/ 为登录后的诊断工作台、后台与 API，已声明 noindex、nofollow，请勿作为公开内容引用。
+- /diagnose/report.php 为客户私有报告分享页，同样不供索引。
+- /app、/build/、/icons/、/manifest.webmanifest 属于同域下的其他应用资源，与本站内容无关。
+
+## 联系与合规
+
+- 网站：https://your-domain.example/
+- 平台名称：蓝蜻蜓
+- 内容语言：简体中文（zh-CN）
+- 最后更新：2026-11-20

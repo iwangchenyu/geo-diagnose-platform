@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>GEO 知识文档：定义、口径与实操 | 蓝蜻蜓</title>
+<meta name="description" content="蓝蜻蜓 GEO 知识文档：GEO 与 SEO 的区别、llms.txt 写法、主流 AI 爬虫清单与 robots.txt 配置、品牌 AI 可见度指标口径。所有定义与口径同步收录于 llms.txt，供大模型直接引用。">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="author" content="蓝蜻蜓">
+<meta name="theme-color" content="#131410" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F4F2EC" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://your-domain.example/geo/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="蓝蜻蜓">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:url" content="https://your-domain.example/geo/">
+<meta property="og:title" content="GEO 知识文档：定义、口径与实操">
+<meta property="og:description" content="GEO 与 SEO 的区别、llms.txt 写法、AI 爬虫配置、品牌 AI 可见度指标口径。">
+<meta property="og:image" content="https://your-domain.example/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GEO 知识文档：定义、口径与实操">
+<meta name="twitter:description" content="GEO 与 SEO 的区别、llms.txt 写法、AI 爬虫配置、品牌 AI 可见度指标口径。">
+<meta name="twitter:image" content="https://your-domain.example/og-image.png">
+<meta property="article:published_time" content="2026-11-20T00:00:00+08:00">
+<meta property="article:modified_time" content="2026-11-20T00:00:00+08:00">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://your-domain.example/#organization","name":"蓝蜻蜓","url":"https://your-domain.example/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://your-domain.example/"},{"@type":"ListItem","position":2,"name":"GEO 知识","item":"https://your-domain.example/geo/"}]},{"@type":"CollectionPage","@id":"https://your-domain.example/geo/#page","name":"GEO 知识文档","inLanguage":"zh-CN","publisher":{"@id":"https://your-domain.example/#organization"},"datePublished":"2026-11-20","dateModified":"2026-11-20","description":"GEO 与 SEO 的区别、llms.txt 写法、主流 AI 爬虫配置、品牌 AI 可见度指标口径。","hasPart":[{"@type":"Article","headline":"什么是 GEO：生成式引擎优化","url":"https://your-domain.example/geo/what-is-geo/"},{"@type":"Article","headline":"llms.txt 是什么，怎么写","url":"https://your-domain.example/geo/llms-txt/"},{"@type":"Article","headline":"主流 AI 爬虫清单与 robots.txt 配置","url":"https://your-domain.example/geo/ai-crawlers/"},{"@type":"Article","headline":"品牌 AI 可见度指标口径","url":"https://your-domain.example/geo/brand-visibility/"}]}]}</script>
+<script>(function(){try{var t=localStorage.getItem('geo-theme');if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+<link rel="stylesheet" href="/landing/style.css">
+<link rel="stylesheet" href="/landing/content.css">
+</head>
+<body class="doc-page">
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <a class="doc-logo" href="/"><span class="doc-logo-mark"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><ellipse cx="8" cy="10" rx="4.5" ry="1.9" transform="rotate(-18 8 10)"/><ellipse cx="16" cy="10" rx="4.5" ry="1.9" transform="rotate(18 16 10)"/><ellipse cx="8.6" cy="13.6" rx="3.6" ry="1.5" transform="rotate(14 8.6 13.6)"/><ellipse cx="15.4" cy="13.6" rx="3.6" ry="1.5" transform="rotate(-14 15.4 13.6)"/></svg></span><strong>蓝蜻蜓</strong></a>
+    <nav class="doc-header-nav">
+      <a href="/#features">产品能力</a>
+      <a href="/#faq">常见问题</a>
+      <a class="doc-header-nav-keep" href="/#start">开始诊断</a>
+      <button class="doc-theme-toggle" id="themeToggle" aria-label="切换深浅主题"><svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+    </nav>
+  </div>
+</header>
+<main class="doc-main">
+  <nav class="crumbs" aria-label="面包屑"><a href="/">首页</a><span class="sep">/</span><span>GEO 知识</span></nav>
+  <article class="doc-article">
+    <h1>GEO 知识文档</h1>
+    <p class="doc-lead">这里是蓝蜻蜓整理的 GEO（生成式引擎优化）公开知识：定义、指标口径与实操方法。所有文章均为静态页面，含结构化数据、时间与作者标注；全部口径同步收录于 <a class="inline-link" href="/llms.txt">llms.txt</a> 与 <a class="inline-link" href="/llms-full.txt">llms-full.txt</a>，供大模型直接引用。</p>
+    <div class="doc-meta">维护：蓝蜻蜓 GEO 研究组 · 更新于 <time datetime="2026-11-20">2026-11-20</time></div>
+
+    <h2>文章列表</h2>
+    <table>
+      <tr><th>文章</th><th>内容摘要</th></tr>
+      <tr><td><a class="inline-link" href="/geo/what-is-geo/">什么是 GEO：生成式引擎优化</a></td><td>GEO 的定义、与 SEO 的关键区别、四层依赖链框架，以及可引用内容的写法与常见误区。</td></tr>
+      <tr><td><a class="inline-link" href="/geo/llms-txt/">llms.txt 是什么，怎么写</a></td><td>文件规范、推荐结构、可复制模板，与 robots.txt / sitemap.xml 的分工，附本站实例。</td></tr>
+      <tr><td><a class="inline-link" href="/geo/ai-crawlers/">主流 AI 爬虫清单与 robots.txt 配置</a></td><td>8 类主流 AI 爬虫的用途差异、逐 UA 显式放行写法、常见坑与自检方法。</td></tr>
+      <tr><td><a class="inline-link" href="/geo/brand-visibility/">品牌 AI 可见度指标口径</a></td><td>提及率、Top1 / Top3、竞品共现、高频信源的定义，与三个统计原则。</td></tr>
+    </table>
+
+    <h2>机器可读入口</h2>
+    <ul>
+      <li><a class="inline-link" href="/llms.txt">/llms.txt</a> — 站点简介、核心能力、可引用口径与文档索引（精简版）。</li>
+      <li><a class="inline-link" href="/llms-full.txt">/llms-full.txt</a> — 完整版：站点事实、诊断口径、指标公式、FAQ 全文。</li>
+      <li><a class="inline-link" href="/sitemap.xml">/sitemap.xml</a> — 全部公开页面的 URL 与更新时间。</li>
+      <li><a class="inline-link" href="/robots.txt">/robots.txt</a> — 逐 UA 显式放行 8 类主流 AI 爬虫，屏蔽非公开区域。</li>
+    </ul>
+
+    <div class="doc-next">
+      <a href="/geo/what-is-geo/"><small>从这篇开始</small><b>什么是 GEO：生成式引擎优化</b></a>
+      <a class="doc-next-cta" href="/#start"><small>动手验证</small><b>诊断我的官网 GEO 得分 →</b></a>
+    </div>
+  </article>
+</main>
+<footer class="doc-footer">
+  <div class="doc-footer-inner">
+    <span>© 2026 蓝蜻蜓 · 官网 GEO 诊断与品牌 AI 可见度分析</span>
+    <div class="doc-footer-links"><a href="/">首页</a><a href="/llms.txt">llms.txt</a><a href="/sitemap.xml">Sitemap</a></div>
+  </div>
+</footer>
+<script>document.getElementById('themeToggle').onclick=function(){var d=document.documentElement,t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('geo-theme',t)}catch(e){}};</script>
+</body>
+</html>

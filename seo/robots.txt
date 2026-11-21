@@ -1,0 +1,58 @@
+# 蓝蜻蜓 · GEO 诊断平台 — https://your-domain.example/
+# 说明：本文件由站点自主提供，显式放行主流 AI / 生成式引擎爬虫。
+# 诊断工作台、后台与 API 不供索引。
+# 本文件由后台「站点地址与 SEO/GEO 文件」自动生成，请勿手工编辑。
+
+# ---- 训练 / 检索 / 引用类 AI 爬虫：逐 UA 显式放行 ----
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# ---- 通用规则 ----
+User-agent: *
+Allow: /
+Disallow: /diagnose/
+Disallow: /app
+Disallow: /build/
+Disallow: /icons/
+Disallow: /manifest.webmanifest
+
+Sitemap: https://your-domain.example/sitemap.xml

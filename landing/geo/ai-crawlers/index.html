@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>主流 AI 爬虫清单与 robots.txt 配置 | 蓝蜻蜓 GEO 知识</title>
+<meta name="description" content="GPTBot、OAI-SearchBot、Google-Extended、ClaudeBot、PerplexityBot、Bytespider、CCBot、Bingbot 等 8 类主流 AI 爬虫的用途差异、逐 UA 显式放行的 robots.txt 写法与自检方法。">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="author" content="蓝蜻蜓">
+<meta name="theme-color" content="#131410" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F4F2EC" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://your-domain.example/geo/ai-crawlers/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="蓝蜻蜓">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:url" content="https://your-domain.example/geo/ai-crawlers/">
+<meta property="og:title" content="主流 AI 爬虫清单与 robots.txt 配置">
+<meta property="og:description" content="8 类主流 AI 爬虫的用途差异、逐 UA 显式放行的写法与自检方法。">
+<meta property="og:image" content="https://your-domain.example/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="主流 AI 爬虫清单与 robots.txt 配置">
+<meta name="twitter:description" content="8 类主流 AI 爬虫的用途差异、逐 UA 显式放行的写法与自检方法。">
+<meta name="twitter:image" content="https://your-domain.example/og-image.png">
+<meta property="article:published_time" content="2026-11-20T00:00:00+08:00">
+<meta property="article:modified_time" content="2026-11-20T00:00:00+08:00">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://your-domain.example/#organization","name":"蓝蜻蜓","url":"https://your-domain.example/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://your-domain.example/"},{"@type":"ListItem","position":2,"name":"GEO 知识","item":"https://your-domain.example/geo/"},{"@type":"ListItem","position":3,"name":"主流 AI 爬虫清单与 robots.txt 配置"}]},{"@type":"Article","@id":"https://your-domain.example/geo/ai-crawlers/#article","headline":"主流 AI 爬虫清单与 robots.txt 配置","inLanguage":"zh-CN","author":{"@id":"https://your-domain.example/#organization"},"publisher":{"@id":"https://your-domain.example/#organization"},"datePublished":"2026-11-20","dateModified":"2026-11-20","mainEntityOfPage":"https://your-domain.example/geo/ai-crawlers/","description":"8 类主流 AI 爬虫的用途差异、逐 UA 显式放行的写法与自检方法。"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"robots.txt 只写 User-agent: * 允许全部，AI 爬虫就能抓到吗？","acceptedAnswer":{"@type":"Answer","text":"多数情况下能，但不可靠：部分 CDN 安全策略、WAF 规则或站点配置会按 UA 差分拦截，且只写通配符无法表达「明确欢迎 AI 爬虫」的语义。逐 UA 写 Allow 是更稳、更有表达力的做法。"}},{"@type":"Question","name":"放行 AI 爬虫会不会被恶意抓取？","acceptedAnswer":{"@type":"Answer","text":"robots.txt 本身只是声明而非访问控制。对公开内容而言放行的收益（被引用、被推荐）远大于风险；真正需要保护的后台、API 与私有目录，应通过鉴权、频控与 Disallow 双重手段处理，而不是一刀切屏蔽所有 AI 爬虫。"}}]}</script>
+<script>(function(){try{var t=localStorage.getItem('geo-theme');if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+<link rel="stylesheet" href="/landing/style.css">
+<link rel="stylesheet" href="/landing/content.css">
+</head>
+<body class="doc-page">
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <a class="doc-logo" href="/"><span class="doc-logo-mark"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><ellipse cx="8" cy="10" rx="4.5" ry="1.9" transform="rotate(-18 8 10)"/><ellipse cx="16" cy="10" rx="4.5" ry="1.9" transform="rotate(18 16 10)"/><ellipse cx="8.6" cy="13.6" rx="3.6" ry="1.5" transform="rotate(14 8.6 13.6)"/><ellipse cx="15.4" cy="13.6" rx="3.6" ry="1.5" transform="rotate(-14 15.4 13.6)"/></svg></span><strong>蓝蜻蜓</strong></a>
+    <nav class="doc-header-nav">
+      <a href="/geo/">GEO 知识</a>
+      <a href="/#features">产品能力</a>
+      <a href="/#faq">常见问题</a>
+      <a class="doc-header-nav-keep" href="/#start">开始诊断</a>
+      <button class="doc-theme-toggle" id="themeToggle" aria-label="切换深浅主题"><svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+    </nav>
+  </div>
+</header>
+<main class="doc-main">
+  <nav class="crumbs" aria-label="面包屑"><a href="/">首页</a><span class="sep">/</span><a href="/geo/">GEO 知识</a><span class="sep">/</span><span>主流 AI 爬虫清单与 robots.txt 配置</span></nav>
+  <article class="doc-article">
+    <h1>主流 AI 爬虫清单与 robots.txt 配置</h1>
+    <p class="doc-lead"><strong>AI 爬虫</strong>是大模型用来获取网页内容的自动化程序。想让品牌出现在 AI 回答里，第一步就是让这些爬虫拿到你的内容——而这一步经常在不知不觉中被 robots 规则、WAF 或 CDN 挡掉。</p>
+    <div class="doc-meta">作者：蓝蜻蜓 GEO 研究组 · 发布于 <time datetime="2026-11-20">2026-11-20</time> · 更新于 <time datetime="2026-11-20">2026-11-20</time> · 本站 robots 实例：<a class="inline-link" href="/robots.txt">/robots.txt</a></div>
+
+    <h2>需要认识的 8 类主流 AI 爬虫</h2>
+    <table>
+      <tr><th>User-agent</th><th>所属</th><th>主要用途</th></tr>
+      <tr><td>GPTBot</td><td>OpenAI</td><td>抓取公开网页用于训练与改进模型</td></tr>
+      <tr><td>OAI-SearchBot</td><td>OpenAI</td><td>ChatGPT 搜索功能的索引抓取</td></tr>
+      <tr><td>Google-Extended</td><td>Google</td><td>控制内容是否用于 Gemini 与 AI Overviews</td></tr>
+      <tr><td>ClaudeBot</td><td>Anthropic</td><td>Claude 的训练与检索抓取</td></tr>
+      <tr><td>PerplexityBot</td><td>Perplexity</td><td>回答引擎的实时检索抓取</td></tr>
+      <tr><td>Bytespider</td><td>字节跳动</td><td>豆包等中文场景的模型抓取</td></tr>
+      <tr><td>CCBot</td><td>Common Crawl</td><td>公开语料库，众多模型训练数据的上游来源</td></tr>
+      <tr><td>Bingbot</td><td>Microsoft</td><td>Bing 索引，同时影响 Copilot 的回答依据</td></tr>
+    </table>
+    <p>中文站点还应关注 Baiduspider（百度，影响文心一言生态）与各家浏览器内置 AI 助手的抓取策略。上表 8 类是国际与中文场景覆盖面最广的基础集合。</p>
+
+    <h2>为什么要逐 UA 显式放行</h2>
+    <p>robots.txt 的匹配规则是「最长匹配优先」。只写一段 <code>User-agent: *</code> 虽然默认允许抓取，但存在三个问题：一是无法表达「欢迎 AI 引用」的明确语义；二是当通用段里出现某条 Disallow 时，容易误伤 AI 爬虫；三是部分爬虫运营方只尊重针对自己的显式规则。逐 UA 写 <code>Allow: /</code> 成本很低，却让规则对每个爬虫都清晰可判。</p>
+
+    <h2>可直接使用的配置模板</h2>
+<pre><code>User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+Sitemap: https://your-domain.example/sitemap.xml</code></pre>
+
+    <h2>常见坑</h2>
+    <ul>
+      <li><strong>WAF / CDN 差分拦截</strong>：robots.txt 写了 Allow，但防火墙按 UA 直接返回 403 或 429。需要用 AI 爬虫 UA 做差分探测确认真实可达。</li>
+      <li><strong>屏蔽 CSS/JS</strong>：部分站点 Disallow 掉静态资源，导致搜索引擎无法正确渲染页面，渲染评估失真。</li>
+      <li><strong>robots 缓存</strong>：CDN 缓存了旧的 robots.txt，规则改了半天不生效，需确认缓存 TTL 或主动刷新。</li>
+      <li><strong>一刀切屏蔽</strong>：把所有 AI 爬虫全部 Disallow 换取「安全感」，等于主动退出 AI 引用竞争。</li>
+      <li><strong>忘了 Sitemap 行</strong>：robots.txt 末尾的 Sitemap 指令是发现内页最直接的入口。</li>
+    </ul>
+
+    <h2>自检方法</h2>
+    <p>配置完成后，用官网 GEO 诊断跑一次：诊断会逐 UA 解析 8 类爬虫的放行结果、用 AI 爬虫 UA 与浏览器 UA 做差分探测，并给出每一层的得分与问题清单。本站的 robots.txt 也按上述模板编写，可直接对照参考。</p>
+
+    <div class="doc-faq">
+      <details><summary>robots.txt 只写 User-agent: * 允许全部，AI 爬虫就能抓到吗？</summary><p>多数情况下能，但不可靠：部分 CDN 安全策略、WAF 规则或站点配置会按 UA 差分拦截，且只写通配符无法表达「明确欢迎 AI 爬虫」的语义。逐 UA 写 Allow 是更稳、更有表达力的做法。</p></details>
+      <details><summary>放行 AI 爬虫会不会被恶意抓取？</summary><p>robots.txt 本身只是声明而非访问控制。对公开内容而言放行的收益（被引用、被推荐）远大于风险；真正需要保护的后台、API 与私有目录，应通过鉴权、频控与 Disallow 双重手段处理，而不是一刀切屏蔽所有 AI 爬虫。</p></details>
+    </div>
+
+    <div class="doc-next">
+      <a href="/geo/brand-visibility/"><small>下一篇</small><b>品牌 AI 可见度指标口径</b></a>
+      <a class="doc-next-cta" href="/#start"><small>动手验证</small><b>检查 AI 爬虫能否抓到我的站点 →</b></a>
+    </div>
+    <div class="doc-start">
+      <p><b>改完 robots.txt 想确认效果？</b>跑一次官网 GEO 诊断，查看 8 类 AI 爬虫的逐 UA 放行结果与 WAF 差分探测结论。</p>
+      <a class="btn btn-primary" href="/#start">开始诊断</a>
+    </div>
+  </article>
+</main>
+<footer class="doc-footer">
+  <div class="doc-footer-inner">
+    <span>© 2026 蓝蜻蜓 · 官网 GEO 诊断与品牌 AI 可见度分析</span>
+    <div class="doc-footer-links"><a href="/geo/">GEO 知识</a><a href="/llms.txt">llms.txt</a><a href="/sitemap.xml">Sitemap</a></div>
+  </div>
+</footer>
+<script>document.getElementById('themeToggle').onclick=function(){var d=document.documentElement,t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('geo-theme',t)}catch(e){}};</script>
+</body>
+</html>

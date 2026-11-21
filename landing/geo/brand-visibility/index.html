@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>品牌 AI 可见度指标口径 | 蓝蜻蜓 GEO 知识</title>
+<meta name="description" content="品牌 AI 可见度的核心指标口径：提及率、Top1 / Top3 排名、竞品共现、高频信源的定义与计算方式，以及失败样本不补零、别名归一化、否定语境识别三个统计原则。">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="author" content="蓝蜻蜓">
+<meta name="theme-color" content="#131410" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F4F2EC" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://your-domain.example/geo/brand-visibility/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="蓝蜻蜓">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:url" content="https://your-domain.example/geo/brand-visibility/">
+<meta property="og:title" content="品牌 AI 可见度指标口径">
+<meta property="og:description" content="提及率、Top1 / Top3、竞品共现、高频信源的定义与计算方式，以及三个统计原则。">
+<meta property="og:image" content="https://your-domain.example/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="品牌 AI 可见度指标口径">
+<meta name="twitter:description" content="提及率、Top1 / Top3、竞品共现、高频信源的定义与计算方式，以及三个统计原则。">
+<meta name="twitter:image" content="https://your-domain.example/og-image.png">
+<meta property="article:published_time" content="2026-11-20T00:00:00+08:00">
+<meta property="article:modified_time" content="2026-11-20T00:00:00+08:00">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://your-domain.example/#organization","name":"蓝蜻蜓","url":"https://your-domain.example/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://your-domain.example/"},{"@type":"ListItem","position":2,"name":"GEO 知识","item":"https://your-domain.example/geo/"},{"@type":"ListItem","position":3,"name":"品牌 AI 可见度指标口径"}]},{"@type":"Article","@id":"https://your-domain.example/geo/brand-visibility/#article","headline":"品牌 AI 可见度指标口径","inLanguage":"zh-CN","author":{"@id":"https://your-domain.example/#organization"},"publisher":{"@id":"https://your-domain.example/#organization"},"datePublished":"2026-11-20","dateModified":"2026-11-20","mainEntityOfPage":"https://your-domain.example/geo/brand-visibility/","description":"提及率、Top1 / Top3、竞品共现、高频信源的定义与计算方式，以及三个统计原则。"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"品牌提及率为什么要把失败样本剔除而不是计为 0？","acceptedAnswer":{"@type":"Answer","text":"请求失败、超时或返回空结果的样本没有产生任何回答，把它当作「未提及」会把分母虚增、人为拉低提及率；补零和不计入分母是两种方向的失真。蓝蜻蜓的做法是失败样本直接跳过，提及率只基于真实产生的回答计算。"}},{"@type":"Question","name":"为什么不同平台的可见度结果差异很大？","acceptedAnswer":{"@type":"Answer","text":"各平台的模型、检索策略与训练数据不同，对同一问题的回答来源也不同。可比的不是跨平台的绝对值，而是同一平台在不同时期的趋势，因此复测应固定问题词集合与采样平台后再做对比。"}},{"@type":"Question","name":"品牌被 AI 提到但表述是负面的，算不算有效曝光？","acceptedAnswer":{"@type":"Answer","text":"不算正向曝光。可见度分析应做否定语境识别，把「不推荐」「避雷」等否定表述单独归类，否则负面提及会被错误地计入提及率，掩盖真实口碑问题。"}}]}</script>
+<script>(function(){try{var t=localStorage.getItem('geo-theme');if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+<link rel="stylesheet" href="/landing/style.css">
+<link rel="stylesheet" href="/landing/content.css">
+</head>
+<body class="doc-page">
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <a class="doc-logo" href="/"><span class="doc-logo-mark"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><ellipse cx="8" cy="10" rx="4.5" ry="1.9" transform="rotate(-18 8 10)"/><ellipse cx="16" cy="10" rx="4.5" ry="1.9" transform="rotate(18 16 10)"/><ellipse cx="8.6" cy="13.6" rx="3.6" ry="1.5" transform="rotate(14 8.6 13.6)"/><ellipse cx="15.4" cy="13.6" rx="3.6" ry="1.5" transform="rotate(-14 15.4 13.6)"/></svg></span><strong>蓝蜻蜓</strong></a>
+    <nav class="doc-header-nav">
+      <a href="/geo/">GEO 知识</a>
+      <a href="/#features">产品能力</a>
+      <a href="/#faq">常见问题</a>
+      <a class="doc-header-nav-keep" href="/#start">开始诊断</a>
+      <button class="doc-theme-toggle" id="themeToggle" aria-label="切换深浅主题"><svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+    </nav>
+  </div>
+</header>
+<main class="doc-main">
+  <nav class="crumbs" aria-label="面包屑"><a href="/">首页</a><span class="sep">/</span><a href="/geo/">GEO 知识</a><span class="sep">/</span><span>品牌 AI 可见度指标口径</span></nav>
+  <article class="doc-article">
+    <h1>品牌 AI 可见度指标口径</h1>
+    <p class="doc-lead"><strong>品牌 AI 可见度</strong>衡量的是：当用户向大模型询问与你的行业、产品相关的问题时，回答里有没有你、排在第几位、和谁一起出现、引用了谁的内容。本文给出蓝蜻蜓平台采用的指标定义与统计原则，口径与 <a class="inline-link" href="/llms.txt">llms.txt</a> 一致。</p>
+    <div class="doc-meta">作者：蓝蜻蜓 GEO 研究组 · 发布于 <time datetime="2026-11-20">2026-11-20</time> · 更新于 <time datetime="2026-11-20">2026-11-20</time> · 完整口径见 <a class="inline-link" href="/llms.txt">llms.txt</a></div>
+
+    <h2>问题词怎么来</h2>
+    <p>以「核心词 × 意图模板」自动生成问题词，模板覆盖推荐、对比、口碑、价格、怎么选、哪家好等真实用户问法，默认生成 15 个意图问句；也支持手工指定问题词。固定的问题词集合是复测可比的前提。</p>
+
+    <h2>核心指标</h2>
+    <h3>品牌提及率</h3>
+    <p>提及率 = 提及该品牌的成功样本数 ÷ 成功样本总数。按平台与问题词两个维度分别统计，也可汇总为综合提及率。这是可见度的第一指标：回答里根本没有你，排名与口碑都无从谈起。</p>
+    <h3>Top1 / Top3 排名</h3>
+    <p>Top1 指品牌在回答中位列首个推荐；Top3 指品牌出现在回答前三位推荐序列中。大模型回答通常按推荐顺序列举品牌，位次比提及本身更能反映竞争位置。</p>
+    <h3>竞品共现</h3>
+    <p>统计同一回答中与品牌共同出现的其他品牌及频次，形成竞品格局：谁总和你一起被列出、你排在它前面还是后面。共现分析直接揭示「AI 把你和谁放在同一梯队」。</p>
+    <h3>高频信源</h3>
+    <p>统计回答中引用的来源域名与内容类型，判断 AI 在回答你所在行业问题时优先采信哪些渠道。高频信源是内容建设与渠道投放的优先级依据：先出现在 AI 已经信任的地方，再被引用就是顺水推舟。</p>
+
+    <h2>三个统计原则</h2>
+    <ul>
+      <li><strong>失败样本不补零</strong>：请求失败、超时或空回答的样本直接跳过，不计入分母。把失败当「未提及」会虚增分母、人为拉低提及率。</li>
+      <li><strong>别名归一化</strong>：品牌简称、全称、英文名、常见错写归一到同一实体再统计，否则同一品牌会被拆成多个统计对象，提及率失真。</li>
+      <li><strong>否定语境识别</strong>：识别「不推荐」「避雷」「慎选」等否定表述，将负面提及单独归类，避免负反馈被误计入正向曝光。</li>
+    </ul>
+    <p>此外，每次采样都会保留原始回答样本用于追溯：任何指标异常都可以回查是模型表述变化、别名漏判还是采样波动。</p>
+
+    <h2>怎么用这些指标</h2>
+    <p>单次结果只是快照，有意义的是趋势。建议固定问题词集合与采样平台，按周或月复测，观察提及率、Top3 占比与竞品格局的变化；配合官网 GEO 诊断的四层得分，把「内容可被引用」与「品牌被实际引用」两条线放在一起看——前者决定后者的上限。</p>
+
+    <div class="doc-faq">
+      <details><summary>品牌提及率为什么要把失败样本剔除而不是计为 0？</summary><p>请求失败、超时或返回空结果的样本没有产生任何回答，把它当作「未提及」会把分母虚增、人为拉低提及率；补零和不计入分母是两种方向的失真。蓝蜻蜓的做法是失败样本直接跳过，提及率只基于真实产生的回答计算。</p></details>
+      <details><summary>为什么不同平台的可见度结果差异很大？</summary><p>各平台的模型、检索策略与训练数据不同，对同一问题的回答来源也不同。可比的不是跨平台的绝对值，而是同一平台在不同时期的趋势，因此复测应固定问题词集合与采样平台后再做对比。</p></details>
+      <details><summary>品牌被 AI 提到但表述是负面的，算不算有效曝光？</summary><p>不算正向曝光。可见度分析应做否定语境识别，把「不推荐」「避雷」等否定表述单独归类，否则负面提及会被错误地计入提及率，掩盖真实口碑问题。</p></details>
+    </div>
+
+    <div class="doc-next">
+      <a href="/geo/what-is-geo/"><small>上一篇</small><b>什么是 GEO：生成式引擎优化</b></a>
+      <a class="doc-next-cta" href="/#start"><small>动手验证</small><b>测一测我的品牌 AI 提及率 →</b></a>
+    </div>
+    <div class="doc-start">
+      <p><b>想看自己的品牌在 AI 回答里排在第几？</b>填写品牌名与行业词，多平台采样提及率、Top1 / Top3 与竞品格局，并生成按行业定制的优化方案。</p>
+      <a class="btn btn-primary" href="/#start">开始诊断</a>
+    </div>
+  </article>
+</main>
+<footer class="doc-footer">
+  <div class="doc-footer-inner">
+    <span>© 2026 蓝蜻蜓 · 官网 GEO 诊断与品牌 AI 可见度分析</span>
+    <div class="doc-footer-links"><a href="/geo/">GEO 知识</a><a href="/llms.txt">llms.txt</a><a href="/sitemap.xml">Sitemap</a></div>
+  </div>
+</footer>
+<script>document.getElementById('themeToggle').onclick=function(){var d=document.documentElement,t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('geo-theme',t)}catch(e){}};</script>
+</body>
+</html>
